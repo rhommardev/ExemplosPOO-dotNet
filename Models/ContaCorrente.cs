@@ -18,10 +18,18 @@ namespace ExemplosPOO.Models
         public int NumeroConta { get; set; }
         private decimal Saldo;
 
-    //metodo
+        //metodo
         public void Sacar(decimal valor)
-        {
-            Saldo -= valor;
-        }        
+        { //criando condição 
+            if (Saldo >= valor)
+            { 
+                Saldo -= valor;
+                Console.WriteLine($"Saque de {valor:C} realizado com sucesso. Saldo atual: {Saldo:C}");
+            }
+            else
+            {
+                Console.WriteLine($"Saldo insuficiente para saque de {valor:C}. Saldo atual: {Saldo:C}");
+            }
+        }
     }
 }
