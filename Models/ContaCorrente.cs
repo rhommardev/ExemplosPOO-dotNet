@@ -22,7 +22,7 @@ namespace ExemplosPOO.Models
         public void Sacar(decimal valor)
         { //criando condição 
             if (Saldo >= valor)
-            { 
+            {
                 Saldo -= valor;
                 Console.WriteLine($"Saque de {valor:C} realizado com sucesso. Saldo atual: {Saldo:C}");
             }
@@ -30,6 +30,11 @@ namespace ExemplosPOO.Models
             {
                 Console.WriteLine($"Saldo insuficiente para saque de {valor:C}. Saldo atual: {Saldo:C}");
             }
+        }
+        //metodo exibir saldo
+        public void ExibirSaldo()
+        {
+            Console.WriteLine($"Saldo da conta {NumeroConta}: {Saldo:C}");
         }
     }
 }
